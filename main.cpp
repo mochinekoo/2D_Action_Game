@@ -1,5 +1,6 @@
 #include <DxLib.h>
 #include "framework.h"
+#include "SceneManager.h"
 
 int initApplication(); //アプリケーションを初期化する関数
 
@@ -10,6 +11,17 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
 
     while (true) {
         ClearDrawScreen();
+
+        SceneBase* currentScene = SceneManager::GetInstance().GetCurrentScene();
+        if (currentScene != nullptr) {
+            currentScene->Update();
+            currentScene->Draw();
+        }
+        else {
+            MessageBox(nullptr, "シーンが見つからなかったため、ソフトを終了します。", nullptr, MB_OK);
+            DxLib_End();
+            break;
+        }
 
         ScreenFlip();
         WaitTimer(1000 / GameScreen::FPS);
