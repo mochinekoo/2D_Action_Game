@@ -130,18 +130,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BootScene.cpp" />
+    <ClCompile Include="DrawBase.cpp" />
     <ClCompile Include="Location2D.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="TestDraw.cpp" />
     <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BootScene.h" />
+    <ClInclude Include="DrawBase.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Location2D.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="TestDraw.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

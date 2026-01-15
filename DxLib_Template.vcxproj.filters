@@ -14,6 +14,9 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{ea5339dd-4f61-475e-bfab-a990c399f3e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Draw">
+      <UniqueIdentifier>{219a35cc-7b9a-4240-8b7f-161a02b615cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -34,6 +37,12 @@
     <ClCompile Include="BootScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="DrawBase.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="TestDraw.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -53,6 +62,12 @@
     </ClInclude>
     <ClInclude Include="BootScene.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawBase.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="TestDraw.h">
+      <Filter>Draw</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
