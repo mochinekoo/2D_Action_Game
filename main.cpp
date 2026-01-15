@@ -29,6 +29,8 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
             break;
         }
     }
+    DxLib_End();
+    return 0;
 }
 
 int initApplication() {
