@@ -11,5 +11,9 @@ public:
 	void Init() override;
 	void Update() override;
 	void Draw() override;
+
+	inline int GetCount() {
+		return count;
+	}
 };
 
