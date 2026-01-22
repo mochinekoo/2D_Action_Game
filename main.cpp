@@ -2,6 +2,7 @@
 #include "framework.h"
 #include "SceneManager.h"
 #include "SubWindow.h"
+#include "GameUtil.h"
 
 int initApplication(); //アプリケーションを初期化する関数
 
@@ -14,6 +15,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
 
     while (true) {
         ClearDrawScreen();
+		KeyInput::updateKeyState();
 
         SceneBase* currentScene = SceneManager::GetInstance().GetCurrentScene();
         if (currentScene != nullptr) {
