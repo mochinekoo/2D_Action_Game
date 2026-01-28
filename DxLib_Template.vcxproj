@@ -24,6 +24,7 @@
     <ProjectGuid>{6946cc99-dd9e-4581-99e6-b631df432981}</ProjectGuid>
     <RootNamespace>DxLibTemplate</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>2D_Action_Game</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -133,6 +134,7 @@
     <ClCompile Include="DrawBase.cpp" />
     <ClCompile Include="Location2D.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="Matrix2D.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
@@ -140,12 +142,14 @@
     <ClCompile Include="TestDraw.cpp" />
     <ClCompile Include="TextDraw.cpp" />
     <ClCompile Include="Vector2D.cpp" />
+    <ClCompile Include="WaitingScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BootScene.h" />
     <ClInclude Include="DrawBase.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Location2D.h" />
+    <ClInclude Include="MapManager.h" />
     <ClInclude Include="MathUtil.h" />
     <ClInclude Include="Matrix2D.h" />
     <ClInclude Include="SceneBase.h" />
@@ -155,6 +159,7 @@
     <ClInclude Include="TextDraw.h" />
     <ClInclude Include="GameUtil.h" />
     <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="WaitingScene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
