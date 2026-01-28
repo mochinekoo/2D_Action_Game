@@ -1,11 +1,8 @@
 #include "SceneManager.h"
 #include "BootScene.h"
+#include "WaitingScene.h"
 
-SceneManager::SceneManager() {
-	sceneList.push_back(new BootScene());
-
-	ChangeScene("BootScene");
-}
+SceneManager::SceneManager() {}
 
 SceneManager::~SceneManager() {
 }
@@ -14,6 +11,7 @@ int SceneManager::ChangeScene(std::string name) {
 	SceneBase* scene = GetScene(name);
 	if (scene != nullptr) {
 		currentScene = scene;
+		currentScene->Init();
 		return 0;
 	}
 
@@ -38,5 +36,13 @@ bool SceneManager::IsCurrentScene(std::string name) {
 		return false;
 	}
 	return currentScene->GetName()._Equal(name);
+}
+
+void SceneManager::InitScenes() {
+	sceneList.push_back(new BootScene());
+	sceneList.push_back(new WaitingScene());
+
+	ChangeScene("BootScene");
+	ChangeScene("WaitingScene");
 }
 

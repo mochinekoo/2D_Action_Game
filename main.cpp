@@ -51,5 +51,7 @@ int initApplication() {
     SetBackgroundColor(GameScreen::BACKGROUND[0], GameScreen::BACKGROUND[1], GameScreen::BACKGROUND[2]);
     SetDrawScreen(DX_SCREEN_BACK);
 
+	SceneManager::GetInstance().InitScenes();
+
     return 0;
 }

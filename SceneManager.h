@@ -19,5 +19,6 @@ public:
 	SceneBase* GetCurrentScene();
 	SceneBase* GetScene(std::string name);
 	bool IsCurrentScene(std::string name);
+	void InitScenes();
 };
 
