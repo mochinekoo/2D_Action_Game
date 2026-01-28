@@ -58,6 +58,9 @@
     <ClCompile Include="WaitingScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="RunningScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -103,6 +106,9 @@
       <Filter>Manager</Filter>
     </ClInclude>
     <ClInclude Include="WaitingScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="RunningScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>

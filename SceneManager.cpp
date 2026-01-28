@@ -1,6 +1,7 @@
 #include "SceneManager.h"
 #include "BootScene.h"
 #include "WaitingScene.h"
+#include "RunningScene.h"
 
 SceneManager::SceneManager() {}
 
@@ -41,6 +42,7 @@ bool SceneManager::IsCurrentScene(std::string name) {
 void SceneManager::InitScenes() {
 	sceneList.push_back(new BootScene());
 	sceneList.push_back(new WaitingScene());
+	sceneList.push_back(new RunningScene());
 
 	ChangeScene("BootScene");
 	ChangeScene("WaitingScene");

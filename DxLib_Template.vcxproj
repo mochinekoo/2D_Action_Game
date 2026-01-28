@@ -136,6 +136,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="Matrix2D.cpp" />
+    <ClCompile Include="RunningScene.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SubWindow.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="MapManager.h" />
     <ClInclude Include="MathUtil.h" />
     <ClInclude Include="Matrix2D.h" />
+    <ClInclude Include="RunningScene.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SubWindow.h" />
