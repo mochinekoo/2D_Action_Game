@@ -17,7 +17,7 @@ RunningScene::RunningScene()
 		for (int x = 0; x < mapManager.GetMapData()[0].size(); x++) {
 			int tile = mapManager.GetMapData()[y].at(x);
 			if (tile == 5) {
-				player = new Player(Location2D(x * 64, y * 64), Vector2D(4, 0));
+				player = new Player(Location2D(x * 64, y * 64), Vector2D(4, 5));
 				player->Init();
 			}
 		}
@@ -40,7 +40,7 @@ void RunningScene::Draw() {
 		for (int x = 0; x < mapManager.GetMapData()[0].size(); x++) {
 			int tile = mapManager.GetMapData()[y].at(x);
 			if (tile == 1) {
-				DrawBox(x * 64, y * 64, x * 64 + 64, y * 64 + 64, GetColor(0, 0, 0), true); //’n–Ê
+				DrawBox((x * 64) - Player::scrollLocation_.x_, y * 64, (x * 64 + 64) - Player::scrollLocation_.x_, y * 64 + 64, GetColor(0, 0, 0), true); //’n–Ê
 			}
 		}
 	}
