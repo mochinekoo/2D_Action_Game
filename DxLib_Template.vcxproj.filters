@@ -64,6 +64,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>Draw</Filter>
     </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -115,6 +118,9 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
       <Filter>Draw</Filter>
     </ClInclude>
   </ItemGroup>

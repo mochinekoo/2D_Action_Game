@@ -4,11 +4,15 @@
 #include "MapManager.h"
 #include "GameUtil.h"
 #include "framework.h"
+#include "Bullet.h"
+#include "SceneManager.h"
+#include "RunningScene.h"
 
 namespace {
 	const float GRAVITY = 1.0f;
 	const int JUMP_POWER = 15;
 	MapManager& mapManager = MapManager::GetInstance();
+	SceneManager& sceneManager = SceneManager::GetInstance();
 }
 
 Player::Player(Location2D location, Vector2D vector)
@@ -38,6 +42,10 @@ void Player::Update() {
 	}
 	if (KeyInput::isKeyFixDown(KEY_INPUT_SPACE)) {
 		vector_.y_ = JUMP_POWER;
+	}
+	if (KeyInput::isKeyFixDown(KEY_INPUT_P)) {
+		RunningScene* runningScene = (RunningScene*) sceneManager.GetCurrentScene();
+		runningScene->drawObj.push_back(new Bullet(location_, { 3, 0 }));
 	}
 
 	location_.y_ -= vector_.y_;

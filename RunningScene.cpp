@@ -30,11 +30,19 @@ void RunningScene::Init() {
 void RunningScene::Update() {
 	timer++;
 	player->Update();
+
+	for (DrawBase* draw : drawObj) {
+		draw->Update();
+	}
 }
 
 void RunningScene::Draw() {
 	DrawGraph(0, 0, backgroundHandle, false); //”wŒi
 	player->Draw();
+
+	for (DrawBase* draw : drawObj) {
+		draw->Draw();
+	}
 
 	for (int y = 0; y < mapManager.GetMapData().size(); y++) {
 		for (int x = 0; x < mapManager.GetMapData()[0].size(); x++) {

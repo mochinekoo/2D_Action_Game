@@ -1,6 +1,7 @@
 #pragma once
 #include "SceneBase.h"
 #include "Player.h"
+#include <vector>
 
 class RunningScene : public SceneBase {
 private:
@@ -8,6 +9,7 @@ private:
 	int backgroundHandle;
 	Player* player;
 public:
+	std::vector<DrawBase*> drawObj;
 	RunningScene();
 	void Init() override;
 	void Update() override;
