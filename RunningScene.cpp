@@ -1,21 +1,19 @@
 #include "RunningScene.h"
 #include "SceneBase.h"
 #include <DxLib.h>
-#include "MapManager.h"
+#include "Stage.h"
 #include "Player.h"
-
-namespace {
-	MapManager& mapManager = MapManager::GetInstance();
-}
 
 RunningScene::RunningScene() 
  : SceneBase("RunningScene") {
 	timer = 0;
 	backgroundHandle = LoadGraph("background_1.png");
+	stage = new Stage();
+	drawObj.push_back(stage);
 	
-	for (int y = 0; y < mapManager.GetMapData().size(); y++) {
-		for (int x = 0; x < mapManager.GetMapData()[0].size(); x++) {
-			int tile = mapManager.GetMapData()[y].at(x);
+	for (int y = 0; y < stage->GetMapHeight(); y++) {
+		for (int x = 0; x < stage->GetMapWidth(); x++) {
+			int tile = stage->GetMapData(x, y);
 			if (tile == 5) {
 				player = new Player(Location2D(x * 64, y * 64), Vector2D(4, 5));
 				player->Init();
@@ -42,14 +40,5 @@ void RunningScene::Draw() {
 
 	for (DrawBase* draw : drawObj) {
 		draw->Draw();
-	}
-
-	for (int y = 0; y < mapManager.GetMapData().size(); y++) {
-		for (int x = 0; x < mapManager.GetMapData()[0].size(); x++) {
-			int tile = mapManager.GetMapData()[y].at(x);
-			if (tile == 1) {
-				DrawBox((x * 64) - Player::scrollLocation_.x_, y * 64, (x * 64 + 64) - Player::scrollLocation_.x_, y * 64 + 64, GetColor(0, 0, 0), true); //’n–Ê
-			}
-		}
 	}
 }

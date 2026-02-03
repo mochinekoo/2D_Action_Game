@@ -7,10 +7,5 @@ public:
 	void Init() override;
 	void Update() override;
 	void Draw() override;
-	int GetUpCollision(int x, int y);
-	int GetDownCollision(int x, int y);
-	int GetLeftCollision(int x, int y);
-	int GetRightCollision(int x, int y);
-	bool IsBlockCollision(int x, int y);
 };
 

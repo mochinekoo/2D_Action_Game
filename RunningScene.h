@@ -2,6 +2,8 @@
 #include "SceneBase.h"
 #include "Player.h"
 #include <vector>
+#include "DrawBase.h"
+#include "Stage.h"
 
 class RunningScene : public SceneBase {
 private:
@@ -9,6 +11,7 @@ private:
 	int backgroundHandle;
 	Player* player;
 public:
+	Stage* stage;
 	std::vector<DrawBase*> drawObj;
 	RunningScene();
 	void Init() override;

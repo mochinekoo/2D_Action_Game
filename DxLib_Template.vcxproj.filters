@@ -52,9 +52,6 @@
     <ClCompile Include="SubWindow.cpp">
       <Filter>Library</Filter>
     </ClCompile>
-    <ClCompile Include="MapManager.cpp">
-      <Filter>Manager</Filter>
-    </ClCompile>
     <ClCompile Include="WaitingScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
@@ -65,6 +62,9 @@
       <Filter>Draw</Filter>
     </ClCompile>
     <ClCompile Include="Bullet.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
       <Filter>Draw</Filter>
     </ClCompile>
   </ItemGroup>
@@ -108,9 +108,6 @@
     <ClInclude Include="SubWindow.h">
       <Filter>Library</Filter>
     </ClInclude>
-    <ClInclude Include="MapManager.h">
-      <Filter>Manager</Filter>
-    </ClInclude>
     <ClInclude Include="WaitingScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
@@ -121,6 +118,9 @@
       <Filter>Draw</Filter>
     </ClInclude>
     <ClInclude Include="Bullet.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
       <Filter>Draw</Filter>
     </ClInclude>
   </ItemGroup>
