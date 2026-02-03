@@ -47,7 +47,7 @@ void Player::Update() {
 	}
 	if (KeyInput::isKeyFixDown(KEY_INPUT_P)) {
 		RunningScene* runningScene = (RunningScene*) sceneManager.GetCurrentScene();
-		runningScene->drawObj.push_back(new Bullet(location_, { 3, 0 }));
+		runningScene->drawObj.push_back(new Bullet(location_, { 3, 3 }));
 	}
 
 	location_.y_ -= vector_.y_;

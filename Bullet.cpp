@@ -7,6 +7,7 @@
 #include "RunningScene.h"
 #include <vector>
 #include "Stage.h"
+#include <cmath>
 
 namespace {
 	SceneManager& sceneManager = SceneManager::GetInstance();
@@ -16,6 +17,7 @@ namespace {
 
 Bullet::Bullet(Location2D location, Vector2D vector)
 	: DrawBase("Bullet", location, vector) {
+	angle_ = 0.0f;
 }
 
 Bullet::~Bullet() {
@@ -27,7 +29,10 @@ void Bullet::Init() {
 void Bullet::Update() {
 	RunningScene* runningScene = (RunningScene*)sceneManager.GetScene("RunningScene");
 	Stage* stage = runningScene->stage;
-	location_.x_ += vector_.x_;
+	location_.x_ += (vector_.x_);
+	location_.y_ += (vector_.y_ * sin(angle_));
+	angle_+=0.1f;
+
 	int upRightCol = stage->GetRightCollision(location_.x_ + BULLET_RADIUS, location_.y_ - BULLET_RADIUS);
 	int downRightCol = stage->GetRightCollision(location_.x_ + BULLET_RADIUS, location_.y_ + BULLET_RADIUS);
 	int maxRightCol = max(upRightCol, downRightCol);
