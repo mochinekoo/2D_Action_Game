@@ -15,6 +15,10 @@ public:
 	virtual void Update() = 0;
 	virtual void Draw() = 0;
 
+	void RemoveDrawObject(DrawBase* obj);
+	void AddDrawObject(DrawBase* obj);
+	DrawBase* GetDrawObject(std::string name);
+
 	std::string GetName();
 };
 
