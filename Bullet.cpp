@@ -11,7 +11,7 @@
 
 namespace {
 	SceneManager& sceneManager = SceneManager::GetInstance();
-	const int BULLET_RADIUS = 5;
+	const int BULLET_RADIUS = 10;
 	const unsigned int BULLET_COLOR = GetColor(255, 0, 0);
 }
 
@@ -38,13 +38,10 @@ void Bullet::Update() {
 	int maxRightCol = max(upRightCol, downRightCol);
 	location_.x_ -= maxRightCol;
 
-	if (0 > location_.x_ || location_.x_ > GameScreen::WIDTH) {
-		for (auto in = runningScene->drawObj.begin(); in != runningScene->drawObj.end(); in++) {
-			if (*in == this) {
-				runningScene->drawObj.erase(in);
-				break;
-			}
-		}
+	bool inScreen = 0 < location_.x_ && location_.x_ < GameScreen::WIDTH;
+
+	if (!inScreen || maxRightCol > 0) {
+		runningScene->RemoveDrawObject(this);
 		delete this;
 	}
 }
