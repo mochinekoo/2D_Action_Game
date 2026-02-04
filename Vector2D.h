@@ -20,5 +20,10 @@ public:
 	Vector2D Subtract(float x, float y);
 	Vector2D Multiply(float scalar);
 	Vector2D Normalize();
+
+	float Angle();
+	float Dot(Vector2D& otherVec);
+	float Cross(Vector2D& otherVec);
 	
+	static Vector2D FromAngle(float angle);	
 };

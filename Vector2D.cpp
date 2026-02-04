@@ -54,3 +54,41 @@ Vector2D Vector2D::Normalize() {
 	float newY = (Length() == 0 ? 0 : y_ / Length());;
 	return Vector2D(newX, newY);
 }
+
+/// <summary>
+/// ベクトルの向きをラジアンで返す関数
+/// </summary>
+/// <returns></returns>
+float Vector2D::Angle()
+{
+	return std::atan2(y_, x_);
+}
+
+/// <summary>
+/// 内積をする関数
+/// </summary>
+/// <param name="otherVec">内積したいベクトル</param>
+/// <returns></returns>
+float Vector2D::Dot(Vector2D& otherVec)
+{
+	return x_ * otherVec.x_ + y_ * otherVec.y_;
+}
+
+/// <summary>
+/// 外積をする関数
+/// </summary>
+/// <param name="otherVec">外積したいベクトル</param>
+/// <returns></returns>
+float Vector2D::Cross(Vector2D& otherVec)
+{
+	return x_ * otherVec.y_ - y_ * otherVec.x_;
+}
+
+/// <summary>
+/// ラジアンから単位ベクトルを作る関数
+/// </summary>
+/// <param name="angle"></param>
+/// <returns></returns>
+Vector2D Vector2D::FromAngle(float angle) {
+	return Vector2D(std::cos(angle), std::sin(angle));
+}
