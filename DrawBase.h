@@ -25,6 +25,7 @@ public:
 	virtual void Draw() = 0;
 
 	//オブジェクトの基本情報
+	std::string GetName();
 	Location2D GetLocation();
 	void SetLocation(Location2D location);
 	Vector2D GetVector();

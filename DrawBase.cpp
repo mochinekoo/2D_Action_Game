@@ -11,6 +11,11 @@ DrawBase::DrawBase(std::string name, Location2D location, Vector2D vector, unsig
 	color_ = color;
 }
 
+std::string DrawBase::GetName()
+{
+	return name_;
+}
+
 Location2D DrawBase::GetLocation() {
 	return location_;
 }
