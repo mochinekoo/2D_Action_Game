@@ -12,7 +12,6 @@ private:
 	Player* player;
 public:
 	Stage* stage;
-	std::vector<DrawBase*> drawObj;
 	RunningScene();
 	void Init() override;
 	void Update() override;

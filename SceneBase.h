@@ -1,11 +1,14 @@
 #pragma once
 #include <string>
+#include <vector>
+#include "DrawBase.h"
 
 class SceneBase {
 private:
 	std::string name_;
-	SceneBase();
+	SceneBase();	
 public:
+	std::vector<DrawBase*> drawObj;
 	SceneBase(std::string name);
 
 	virtual void Init() = 0;
