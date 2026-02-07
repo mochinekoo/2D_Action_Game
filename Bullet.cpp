@@ -42,7 +42,6 @@ void Bullet::Update() {
 
 	if (!inScreen || maxRightCol > 0) {
 		runningScene->RemoveDrawObject(this);
-		delete this;
 	}
 }
 

@@ -12,6 +12,7 @@ void SceneBase::RemoveDrawObject(DrawBase* obj) {
 	for (auto in = drawObj.begin(); in != drawObj.end(); in++) {
 		if (*in == obj) {
 			drawObj.erase(in);
+			delete obj;
 			break;
 		}
 	}
