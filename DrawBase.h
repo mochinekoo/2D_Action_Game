@@ -3,12 +3,41 @@
 #include "Location2D.h"
 #include "Vector2D.h"
 
+struct Collider {
+	float top_;
+	float bottom_;
+	float left_;
+	float right_;
+
+	Collider() {
+		top_ = 0;
+		bottom_ = 0;
+		left_ = 0;
+		right_ = 0;
+	}
+
+	Collider(float top, float bottom, float left, float right) {
+		top_ = top;
+		bottom_ = bottom;
+		left_ = left;
+		right_ = right;
+	}
+};
+
+enum BorderType {
+	TOP,
+	BOTTOM,
+	LEFT,
+	RIGHT
+};
+
 class DrawBase {
 protected:
 	//äÓñ{èÓïÒ
 	std::string name_;
 	Location2D location_;
 	Vector2D vector_;
+	Collider collider_;
 
 	//í«â¡óp
 	unsigned int color_;
@@ -18,6 +47,7 @@ protected:
 	int customData_;
 public:
 	DrawBase(std::string name, Location2D location, Vector2D vector);
+	DrawBase(std::string name, Location2D location, Vector2D vector, Collider collider);
 	DrawBase(std::string name, Location2D location, Vector2D vector, unsigned int color);
 
 	virtual void Init() = 0;
