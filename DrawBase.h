@@ -60,6 +60,7 @@ public:
 	void SetLocation(Location2D location);
 	Vector2D GetVector();
 	void SetVector(Vector2D vector);
+	void UpdateBlockCollision(BorderType type);
 
 	//í«â¡èÓïÒ
 	unsigned int GetDrawColor();

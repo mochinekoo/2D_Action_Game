@@ -19,6 +19,7 @@ Player::Player(Location2D location, Vector2D vector)
 	imageHandle = LoadGraph("player.png");
 	GetGraphSize(imageHandle, &imageWidth, &imageHeight);
 	scrollLocation_ = { 0, 0 };
+	collider_ = Collider(imageHeight / 2, imageHeight / 2, imageWidth / 2, imageWidth / 2);
 }
 
 void Player::Init() {
@@ -30,17 +31,11 @@ void Player::Update() {
 
 	if (CheckHitKey(KEY_INPUT_LEFT)) {
 		location_.x_ -= vector_.x_;
-		int upLeftCol = stage->GetLeftCollision(location_.x_, location_.y_);
-		int downLeftCol = stage->GetLeftCollision(location_.x_, location_.y_ + imageHeight);
-		int maxLeftCol = max(upLeftCol, downLeftCol);
-		location_.x_ += maxLeftCol;
+		UpdateBlockCollision(BorderType::LEFT);
 	}
 	if (CheckHitKey(KEY_INPUT_RIGHT)) {
 		location_.x_ += vector_.x_;
-		int upRightCol = stage->GetRightCollision(location_.x_ + imageWidth, location_.y_);
-		int downRightCol = stage->GetRightCollision(location_.x_ + imageWidth, location_.y_ + imageHeight);
-		int maxRightCol = max(upRightCol, downRightCol);
-		location_.x_ -= maxRightCol;
+		UpdateBlockCollision(BorderType::RIGHT);
 	}
 	if (KeyInput::isKeyFixDown(KEY_INPUT_SPACE)) {
 		vector_.y_ = JUMP_POWER;
@@ -53,21 +48,8 @@ void Player::Update() {
 	location_.y_ -= vector_.y_;
 	vector_.y_ -= GRAVITY;
 
-	int upLeftCol = stage->GetUpCollision(location_.x_, location_.y_);
-	int upRightCol = stage->GetUpCollision(location_.x_ + imageWidth, location_.y_);
-	int maxUpCol = max(upLeftCol, upRightCol);
-	if (maxUpCol > 0) {
-		location_.y_ += maxUpCol; 
-		vector_.y_ = 0;
-	}
-
-	int downLeftCol = stage->GetDownCollision(location_.x_, location_.y_ + imageHeight);
-	int downRightCol = stage->GetDownCollision(location_.x_ + imageWidth, location_.y_ + imageHeight);
-	int maxDownCol = max(downLeftCol, downRightCol);
-	if (maxDownCol > 0) {
-		location_.y_ -= maxDownCol;
-		vector_.y_ = 0;
-	}
+	UpdateBlockCollision(BorderType::TOP);
+	UpdateBlockCollision(BorderType::BOTTOM);
 
 	int worldX = location_.x_ / 64;
 	int worldY = location_.y_ / 64;
