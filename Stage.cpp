@@ -34,11 +34,18 @@ void Stage::Init() {
 }
 
 int Stage::GetMapData(int x, int y) {
-	return mapData[y][x];
+	if (0 <= x && GetMapWidth() - 1 >= x &&
+		0 <= y && GetMapHeight() - 1 >= y)  {
+		return mapData[y][x];
+	}
+	return -1;
 }
 
 void Stage::SetMapData(int x, int y, int data) {
-	mapData[y][x] = data;
+	if (0 <= x && GetMapWidth() - 1 >= x &&
+		0 <= y && GetMapHeight() - 1 >= y) {
+		mapData[y][x] = data;
+	}
 }
 
 int Stage::GetMapWidth() {
