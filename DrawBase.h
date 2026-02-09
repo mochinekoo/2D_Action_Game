@@ -24,7 +24,7 @@ struct Collider {
 	}
 };
 
-enum BorderType {
+enum class BorderType {
 	TOP,
 	BOTTOM,
 	LEFT,
