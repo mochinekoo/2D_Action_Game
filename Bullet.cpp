@@ -33,8 +33,8 @@ void Bullet::Update() {
 	location_.y_ += (vector_.y_ * sin(angle_));
 	angle_+=0.1f;
 
-	int upRightCol = stage->GetRightCollision(location_.x_ + BULLET_RADIUS, location_.y_ - BULLET_RADIUS);
-	int downRightCol = stage->GetRightCollision(location_.x_ + BULLET_RADIUS, location_.y_ + BULLET_RADIUS);
+	int upRightCol = stage->GetRightCollision(1, location_.x_ + BULLET_RADIUS, location_.y_ - BULLET_RADIUS);
+	int downRightCol = stage->GetRightCollision(1, location_.x_ + BULLET_RADIUS, location_.y_ + BULLET_RADIUS);
 	int maxRightCol = max(upRightCol, downRightCol);
 	location_.x_ -= maxRightCol;
 

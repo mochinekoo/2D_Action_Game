@@ -84,8 +84,8 @@ void Player::Draw() {
 
 	DrawGraph(location_.x_ - scrollLocation_.x_, location_.y_, imageHandle, false);
 	DrawFormatString(0, 0, GetColor(255, 255, 255), "Down: %d, %d, %0.3f", 
-		stage->GetUpCollision(location_.x_, location_.y_),
-		stage->GetUpCollision(location_.x_ + imageWidth, location_.y_),
+		stage->GetUpCollision(1, location_.x_, location_.y_),
+		stage->GetUpCollision(1, location_.x_ + imageWidth, location_.y_),
 		vector_.y_);
 }
 

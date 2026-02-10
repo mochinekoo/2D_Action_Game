@@ -23,6 +23,15 @@ void Stage::Draw() {
 					GetColor(0, 0, 0), true
 				); //地面
 			}
+			else if (tile == 2) {
+				DrawBox(
+					(x * 64) - Player::scrollLocation_.x_,
+					y * 64,
+					(x * 64 + 64) - Player::scrollLocation_.x_,
+					y * 64 + 64,
+					GetColor(255, 0, 0), true
+				); //ブロック
+			}
 		}
 	}
 }
@@ -56,46 +65,46 @@ int Stage::GetMapHeight() {
 	return mapData.size();
 }
 
-int Stage::GetUpCollision(int x, int y) {
-	if (IsBlockCollision(x, y)) {
+int Stage::GetUpCollision(int blockID, int x, int y) {
+	if (IsBlockCollision(blockID, x, y)) {
 		int dy = y % 64;
 		return 64 - dy;
 	}
 	return 0;
 }
 
-int Stage::GetDownCollision(int x, int y) {
-	if (IsBlockCollision(x, y)) {
+int Stage::GetDownCollision(int blockID, int x, int y) {
+	if (IsBlockCollision(blockID, x, y)) {
 		int dy = y % 64;
 		return dy + 1;
 	}
 	return 0;
 }
 
-int Stage::GetLeftCollision(int x, int y) {
-	if (IsBlockCollision(x, y)) {
+int Stage::GetLeftCollision(int blockID, int x, int y) {
+	if (IsBlockCollision(blockID, x, y)) {
 		int dx = x % 64;
 		return 64 - dx;
 	}
 	return 0;
 }
 
-int Stage::GetRightCollision(int x, int y) {
-	if (IsBlockCollision(x, y)) {
+int Stage::GetRightCollision(int blockID, int x, int y) {
+	if (IsBlockCollision(blockID, x, y)) {
 		int dx = x % 64;
 		return dx + 1;
 	}
 	return 0;
 }
 
-bool Stage::IsBlockCollision(int x, int y) {
+bool Stage::IsBlockCollision(int blockID, int x, int y) {
 	int mapWidth = mapData[0].size();
 	int mapHeight = mapData.size();
 	int worldX = x / 64;
 	int worldY = y / 64;
 	if (0 <= worldX && worldX < mapWidth &&
 		0 <= worldY && worldY < mapHeight) {
-		if (mapData[worldY][worldX] == 1) {
+		if (mapData[worldY][worldX] == blockID) {
 			return true;
 		}
 	}
