@@ -19,7 +19,7 @@ Player::Player(Location2D location, Vector2D vector)
 	imageHandle = LoadGraph("player.png");
 	GetGraphSize(imageHandle, &imageWidth, &imageHeight);
 	scrollLocation_ = { 0, 0 };
-	collider_ = Collider(imageHeight / 2, imageHeight / 2, imageWidth / 2, imageWidth / 2);
+	collider_ = Collider((imageHeight / 2), (imageHeight / 2), (imageWidth / 2) - 1, (imageWidth / 2) - 1);
 }
 
 void Player::Init() {
