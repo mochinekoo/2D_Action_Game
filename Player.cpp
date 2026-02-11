@@ -25,6 +25,7 @@ Player::Player(Location2D location, Vector2D vector)
 }
 
 void Player::Init() {
+	heart_ = DEFAULT_HEART;
 }
 
 void Player::Update() {
@@ -52,6 +53,10 @@ void Player::Update() {
 
 	UpdateBlockCollision(BorderType::TOP);
 	UpdateBlockCollision(BorderType::BOTTOM);
+
+	if (heart_ <= 0) {
+		sceneManager.ChangeScene("EndingScene");
+	}
 
 	int worldX = location_.x_ / 64;
 	int worldY = location_.y_ / 64;

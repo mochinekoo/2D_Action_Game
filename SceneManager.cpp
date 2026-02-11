@@ -2,6 +2,7 @@
 #include "BootScene.h"
 #include "WaitingScene.h"
 #include "RunningScene.h"
+#include "EndingScene.h"
 
 SceneManager::SceneManager() {}
 
@@ -43,6 +44,7 @@ void SceneManager::InitScenes() {
 	sceneList.push_back(new BootScene());
 	sceneList.push_back(new WaitingScene());
 	sceneList.push_back(new RunningScene());
+	sceneList.push_back(new EndingScene());
 
 	ChangeScene("BootScene");
 	ChangeScene("WaitingScene");

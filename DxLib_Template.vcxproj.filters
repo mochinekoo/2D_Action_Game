@@ -67,6 +67,9 @@
     <ClCompile Include="Stage.cpp">
       <Filter>Draw</Filter>
     </ClCompile>
+    <ClCompile Include="EndingScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -122,6 +125,9 @@
     </ClInclude>
     <ClInclude Include="Stage.h">
       <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="EndingScene.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

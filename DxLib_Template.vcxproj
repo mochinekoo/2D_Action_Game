@@ -133,6 +133,7 @@
     <ClCompile Include="BootScene.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="DrawBase.cpp" />
+    <ClCompile Include="EndingScene.cpp" />
     <ClCompile Include="Location2D.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix2D.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="BootScene.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="DrawBase.h" />
+    <ClInclude Include="EndingScene.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Location2D.h" />
     <ClInclude Include="MathUtil.h" />

@@ -25,6 +25,7 @@ RunningScene::RunningScene()
 }
 
 void RunningScene::Init() {
+	player->Init();
 }
 
 void RunningScene::Update() {
