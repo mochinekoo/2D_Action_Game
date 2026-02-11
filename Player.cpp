@@ -11,6 +11,7 @@
 namespace {
 	const float GRAVITY = 1.0f;
 	const int JUMP_POWER = 15;
+	const int DEFAULT_HEART = 5;
 	SceneManager& sceneManager = SceneManager::GetInstance();
 }
 
@@ -20,6 +21,7 @@ Player::Player(Location2D location, Vector2D vector)
 	GetGraphSize(imageHandle, &imageWidth, &imageHeight);
 	scrollLocation_ = { 0, 0 };
 	collider_ = Collider((imageHeight / 2), (imageHeight / 2), (imageWidth / 2) - 1, (imageWidth / 2) - 1);
+	heart_ = DEFAULT_HEART;
 }
 
 void Player::Init() {
@@ -61,6 +63,7 @@ void Player::Update() {
 		location_.y_ = 64*2;
 		vector_.y_ = 0;
 		scrollLocation_ = { 0, 0 };
+		SetHeart(GetHeart() - 1); //マイナスにならないように、関数を通す
 	}
 
 	int scrollSize = GameScreen::WIDTH / 2;
@@ -87,6 +90,15 @@ void Player::Draw() {
 		stage->GetUpCollision(1, location_.x_, location_.y_),
 		stage->GetUpCollision(1, location_.x_ + imageWidth, location_.y_),
 		vector_.y_);
+}
+
+int Player::GetHeart() {
+	return heart_;
+}
+
+void Player::SetHeart(int heart) {
+	if (heart <= 0) heart = 0;
+	heart_ = heart;
 }
 
 

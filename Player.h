@@ -7,8 +7,12 @@ public:
 	void Init() override;
 	void Update() override;
 	void Draw() override;
+
+	int GetHeart();
+	void SetHeart(int heart);
 private:
 	int imageHandle;
 	int imageWidth, imageHeight;
+	int heart_;
 };
 

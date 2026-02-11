@@ -3,6 +3,8 @@
 #include <DxLib.h>
 #include "Stage.h"
 #include "Player.h"
+#include "GameUtil.h"
+#include "framework.h"
 
 RunningScene::RunningScene() 
  : SceneBase("RunningScene") {
@@ -41,4 +43,7 @@ void RunningScene::Draw() {
 	for (DrawBase* draw : drawObj) {
 		draw->Draw();
 	}
+
+	//文字
+	TextUtil::DrawFix2DText(DrawType::RIGHT, GameScreen::WIDTH - 1, 0, 30, (std::string)"残りのハート：" + std::to_string(player->GetHeart()), GetColor(255, 255, 255), GetColor(0, 0, 0));
 }
