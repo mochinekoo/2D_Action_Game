@@ -16,9 +16,12 @@ namespace GameScreen {
 	inline const int BACKGROUND[3] = {0, 0, 0}; //画面の背景
 	inline const int FPS = 60; //画面のフレームレート
 
-	//スクショできないため、コメントアウト
-	/*
+	/// <summary>
+	/// スクショを行う関数。関数自体はDxLibの関数から呼び出してます。
+	/// </summary>
 	inline void saveScreenshot() {
+		static bool nidFlag = false;
+
 		int width, height;
 		GetDrawScreenSize(&width, &height);
 		DATEDATA dateData;
@@ -29,16 +32,18 @@ namespace GameScreen {
 			dateData.Year, dateData.Mon, dateData.Day,
 			dateData.Hour, dateData.Min, dateData.Sec);
 		CreateDirectoryA(GameFile::SCREENSHOT_PATH, nullptr); 
-		ScreenFlip();                    
-		SetDrawScreen(DX_SCREEN_FRONT);
 		int saveresult = SaveDrawScreenToPNG(0, 0, width, height, filename);
-		SetDrawScreen(DX_SCREEN_BACK);
 
 		NOTIFYICONDATA nid;
 		ZeroMemory(&nid, sizeof(NOTIFYICONDATA));
 		nid.cbSize = sizeof(NOTIFYICONDATA);
 		nid.hWnd = GetMainWindowHandle();
 		nid.uID = 1;
+		if (!nidFlag) {
+			Shell_NotifyIcon(NIM_ADD, &nid);
+			nidFlag = true;
+		}
+
 		if (saveresult == 0) {
 			//通知を出す
 			nid.uFlags = NIF_INFO;
@@ -53,7 +58,6 @@ namespace GameScreen {
 			strcpy_s(nid.szInfoTitle, "スクリーンショット保存失敗");
 			nid.dwInfoFlags = NIIF_ERROR;
 		}
-		Shell_NotifyIcon(NIM_ADD, &nid);
+		Shell_NotifyIcon(NIM_MODIFY, &nid);
 	}
-	*/
 }

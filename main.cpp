@@ -36,6 +36,10 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
             break;
         }
 
+        if (KeyInput::isKeyFixDown(KEY_INPUT_F2)) {
+            GameScreen::saveScreenshot();
+        }
+
         ScreenFlip();
         WaitTimer(1000 / GameScreen::FPS);
         if (ProcessMessage() == -1) {
