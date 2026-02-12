@@ -2,6 +2,8 @@
 #include <Windows.h>
 #include <DxLib.h>
 
+extern float deltaTime;
+
 namespace GameFile {
 	inline const char* SCREENSHOT_PATH = "screenshot";
 }

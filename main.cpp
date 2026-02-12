@@ -6,6 +6,8 @@
 
 int initApplication(); //アプリケーションを初期化する関数
 
+float deltaTime = 0.0f;
+
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
     if (initApplication() != 0) {
         return -1;
@@ -13,9 +15,15 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
 
 	CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)createSubWindow, nullptr, 0, nullptr);
 
+    int beforeCount = GetNowCount();
+    int afterCount = GetNowCount();
     while (true) {
         ClearDrawScreen();
 		KeyInput::updateKeyState();
+
+        afterCount = GetNowCount();
+        deltaTime = (afterCount - beforeCount) / 1000.0f;
+        beforeCount = afterCount;
 
         SceneBase* currentScene = SceneManager::GetInstance().GetCurrentScene();
         if (currentScene != nullptr) {

@@ -7,7 +7,10 @@
 #include "SceneManager.h"
 #include "BootScene.h"
 #include "framework.h"
+#include <iomanip>
+#include <sstream>
 
+#define TIMER_ID 1
 #define EXIT_BUTTON_ID 100
 
 namespace {
@@ -32,15 +35,10 @@ LRESULT CALLBACK SubWindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
         break;
     }
     case WM_TIMER: {
-        if (wParam == 1) { //タイマーIDが1のとき
-            static int time = 0;
-            if (SceneManager::GetInstance().IsCurrentScene("BootScene")) {
-				SceneBase* scene = SceneManager::GetInstance().GetCurrentScene();
-				BootScene* bootScene = dynamic_cast<BootScene*>(scene);
-                time = bootScene->GetCount();
-            }
-
-            std::string timeText = "経過時間: " + std::to_string(time) + " 秒";
+        if (wParam == TIMER_ID) { //タイマーIDが1のとき
+            std::ostringstream oss;
+            oss << std::fixed << std::setprecision(3) << deltaTime;
+            std::string timeText = "デルタタイム: " + oss.str() + " 秒";
             if (timehwnd != nullptr) {
                 SetWindowTextA(timehwnd, timeText.c_str());
             }
@@ -114,7 +112,7 @@ int initSubWindow(HINSTANCE hinstance) {
         (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
         NULL
 	);
-	SetTimer(hWnd, 1, 10, NULL); //1秒ごとにWM_TIMERメッセージを送る
+	SetTimer(hWnd, TIMER_ID, 1, NULL); //1秒ごとにWM_TIMERメッセージを送る
 
 
     if (hWnd == NULL) {
