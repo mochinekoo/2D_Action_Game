@@ -1,7 +1,7 @@
 #pragma once
-#include "DrawBase.h"
+#include "MochinekoEngine/DrawBase.h"
 #include <vector>
-#include "Location2D.h"
+#include "MochinekoEngine/Location2D.h"
 
 class Stage : public DrawBase {
 private:

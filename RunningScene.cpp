@@ -1,10 +1,10 @@
 #include "RunningScene.h"
-#include "SceneBase.h"
+#include "MochinekoEngine/SceneBase.h"
 #include <DxLib.h>
 #include "Stage.h"
 #include "Player.h"
-#include "GameUtil.h"
-#include "framework.h"
+#include "MochinekoEngine/GameUtil.h"
+#include "MochinekoEngine/framework.h"
 
 RunningScene::RunningScene() 
  : SceneBase("RunningScene") {

@@ -1,5 +1,5 @@
 #pragma once
-#include "SceneBase.h"
+#include "MochinekoEngine/SceneBase.h"
 class EndingScene : public SceneBase {
 private:
 	int count;

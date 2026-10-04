@@ -1,10 +1,10 @@
 #include "Player.h"
 #include <DxLib.h>
-#include "DrawBase.h"
-#include "GameUtil.h"
-#include "framework.h"
+#include "MochinekoEngine/DrawBase.h"
+#include "MochinekoEngine/GameUtil.h"
+#include "MochinekoEngine/framework.h"
 #include "Bullet.h"
-#include "SceneManager.h"
+#include "MochinekoEngine/SceneManager.h"
 #include "RunningScene.h"
 #include "Stage.h"
 

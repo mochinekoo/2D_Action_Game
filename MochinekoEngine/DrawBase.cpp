@@ -1,6 +1,6 @@
 #include "DrawBase.h"
 #include "SceneManager.h"
-#include "RunningScene.h"
+#include "../RunningScene.h"
 
 DrawBase::DrawBase(std::string name, Location2D location, Vector2D vector) {
 	name_ = name;

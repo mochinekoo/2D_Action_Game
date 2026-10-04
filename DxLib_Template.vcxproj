@@ -106,12 +106,12 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>K:\DxLib_VC\プロジェクトに追加すべきファイル_VC用</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\ProgramData\DxLib_VC\プロジェクトに追加すべきファイル_VC用</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>K:\DxLib_VC\プロジェクトに追加すべきファイル_VC用</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\ProgramData\DxLib_VC\プロジェクトに追加すべきファイル_VC用</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -123,50 +123,52 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\ProgramData\DxLib_VC\プロジェクトに追加すべきファイル_VC用</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\ProgramData\DxLib_VC\プロジェクトに追加すべきファイル_VC用</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BootScene.cpp" />
     <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="DrawBase.cpp" />
     <ClCompile Include="EndingScene.cpp" />
-    <ClCompile Include="Location2D.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Matrix2D.cpp" />
+    <ClCompile Include="MochinekoEngine\BootScene.cpp" />
+    <ClCompile Include="MochinekoEngine\DrawBase.cpp" />
+    <ClCompile Include="MochinekoEngine\Location2D.cpp" />
+    <ClCompile Include="MochinekoEngine\main.cpp" />
+    <ClCompile Include="MochinekoEngine\Matrix2D.cpp" />
+    <ClCompile Include="MochinekoEngine\SceneBase.cpp" />
+    <ClCompile Include="MochinekoEngine\SceneManager.cpp" />
+    <ClCompile Include="MochinekoEngine\SubWindow.cpp" />
+    <ClCompile Include="MochinekoEngine\TestDraw.cpp" />
+    <ClCompile Include="MochinekoEngine\TextDraw.cpp" />
+    <ClCompile Include="MochinekoEngine\Vector2D.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RunningScene.cpp" />
-    <ClCompile Include="SceneBase.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Stage.cpp" />
-    <ClCompile Include="SubWindow.cpp" />
-    <ClCompile Include="TestDraw.cpp" />
-    <ClCompile Include="TextDraw.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
     <ClCompile Include="WaitingScene.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BootScene.h" />
     <ClInclude Include="Bullet.h" />
-    <ClInclude Include="DrawBase.h" />
     <ClInclude Include="EndingScene.h" />
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="Location2D.h" />
-    <ClInclude Include="MathUtil.h" />
-    <ClInclude Include="Matrix2D.h" />
+    <ClInclude Include="MochinekoEngine\BootScene.h" />
+    <ClInclude Include="MochinekoEngine\DrawBase.h" />
+    <ClInclude Include="MochinekoEngine\framework.h" />
+    <ClInclude Include="MochinekoEngine\GameUtil.h" />
+    <ClInclude Include="MochinekoEngine\Location2D.h" />
+    <ClInclude Include="MochinekoEngine\MathUtil.h" />
+    <ClInclude Include="MochinekoEngine\Matrix2D.h" />
+    <ClInclude Include="MochinekoEngine\SceneBase.h" />
+    <ClInclude Include="MochinekoEngine\SceneManager.h" />
+    <ClInclude Include="MochinekoEngine\SubWindow.h" />
+    <ClInclude Include="MochinekoEngine\TestDraw.h" />
+    <ClInclude Include="MochinekoEngine\TextDraw.h" />
+    <ClInclude Include="MochinekoEngine\Vector2D.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RunningScene.h" />
-    <ClInclude Include="SceneBase.h" />
-    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Stage.h" />
-    <ClInclude Include="SubWindow.h" />
-    <ClInclude Include="TestDraw.h" />
-    <ClInclude Include="TextDraw.h" />
-    <ClInclude Include="GameUtil.h" />
-    <ClInclude Include="Vector2D.h" />
     <ClInclude Include="WaitingScene.h" />
   </ItemGroup>
   <ItemGroup>

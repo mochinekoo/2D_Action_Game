@@ -1,9 +1,9 @@
 #include "EndingScene.h"
-#include "SceneBase.h"
+#include "MochinekoEngine/SceneBase.h"
 #include <DxLib.h>
-#include "SceneManager.h"
-#include "GameUtil.h"
-#include "framework.h"
+#include "MochinekoEngine/SceneManager.h"
+#include "MochinekoEngine/GameUtil.h"
+#include "MochinekoEngine/framework.h"
 
 namespace {
 	SceneManager& sceneManager = SceneManager::GetInstance();

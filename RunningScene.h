@@ -1,8 +1,8 @@
 #pragma once
-#include "SceneBase.h"
+#include "MochinekoEngine/SceneBase.h"
 #include "Player.h"
 #include <vector>
-#include "DrawBase.h"
+#include "MochinekoEngine/DrawBase.h"
 #include "Stage.h"
 
 class RunningScene : public SceneBase {

@@ -19,39 +19,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Location2D.cpp">
-      <Filter>Library</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2D.cpp">
-      <Filter>Library</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
-      <Filter>Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneBase.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="BootScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="DrawBase.cpp">
-      <Filter>Draw</Filter>
-    </ClCompile>
-    <ClCompile Include="TestDraw.cpp">
-      <Filter>Draw</Filter>
-    </ClCompile>
-    <ClCompile Include="TextDraw.cpp">
-      <Filter>Draw</Filter>
-    </ClCompile>
-    <ClCompile Include="Matrix2D.cpp">
-      <Filter>Library</Filter>
-    </ClCompile>
-    <ClCompile Include="SubWindow.cpp">
-      <Filter>Library</Filter>
-    </ClCompile>
     <ClCompile Include="WaitingScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
@@ -70,47 +37,41 @@
     <ClCompile Include="EndingScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="MochinekoEngine\SceneManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="MochinekoEngine\BootScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MochinekoEngine\SceneBase.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MochinekoEngine\main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="MochinekoEngine\DrawBase.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="MochinekoEngine\TextDraw.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="MochinekoEngine\TestDraw.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="MochinekoEngine\Matrix2D.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="MochinekoEngine\Location2D.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="MochinekoEngine\Vector2D.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="MochinekoEngine\SubWindow.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Location2D.h">
-      <Filter>Library</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2D.h">
-      <Filter>Library</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneBase.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="BootScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="DrawBase.h">
-      <Filter>Draw</Filter>
-    </ClInclude>
-    <ClInclude Include="TestDraw.h">
-      <Filter>Draw</Filter>
-    </ClInclude>
-    <ClInclude Include="TextDraw.h">
-      <Filter>Draw</Filter>
-    </ClInclude>
-    <ClInclude Include="GameUtil.h">
-      <Filter>Library</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix2D.h">
-      <Filter>Library</Filter>
-    </ClInclude>
-    <ClInclude Include="MathUtil.h">
-      <Filter>Library</Filter>
-    </ClInclude>
-    <ClInclude Include="SubWindow.h">
-      <Filter>Library</Filter>
-    </ClInclude>
     <ClInclude Include="WaitingScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
@@ -128,6 +89,45 @@
     </ClInclude>
     <ClInclude Include="EndingScene.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\SceneManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\BootScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\SceneBase.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\framework.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\DrawBase.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\TestDraw.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\TextDraw.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\GameUtil.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\Matrix2D.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\MathUtil.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\Location2D.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\Vector2D.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="MochinekoEngine\SubWindow.h">
+      <Filter>Library</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
